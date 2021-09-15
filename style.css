@@ -1,0 +1,127 @@
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(fonts/BarlowSemiCondensed-Medium.ttf) format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(fonts/BarlowSemiCondensed-SemiBold.ttf) format('truetype');
+    font-weight: 600;
+}
+
+:root{
+    
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: white;
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+
+    --colored-testimonial-text: var(--white);
+    --colored-primary: var(--primary);
+    font-family: "Barlow Semi Condensed";
+    font-weight: 500;
+    background-color: var(--light-grayish-blue);
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1em;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+strong{
+    font-weight: 600;
+}
+
+.screenreader-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+
+.testimonials{
+    display: grid;
+    gap: 1em;
+}
+
+@media screen and (min-width: 60em) {
+    .testimonials{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .wide{
+        grid-column-end: span 2;
+    }
+
+    .tall{
+        grid-row: 1/ span 2;
+        grid-column-end: -1;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+section:not(.colored){
+    background-color: white;
+    box-shadow: 5px 5px 16px -12px var(--light-gray);
+}
+
+section header {
+    display: flex;
+    gap: .5em;
+    align-items:center;
+}
+
+img {
+    border-radius: 50%;
+    max-height: 2em;
+}
+
+.colored {
+    color: var(--white);
+}
+
+.colored-purple {
+    background-color: var(--moderate-violet);
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top right 5em;
+}
+
+:is(.colored-purple, .colored-dark) img{
+    border: 2px solid hsl(263, 55%, 62%);
+}
+
+.colored-blueish {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.colored-dark {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.author-role {
+    opacity: .5;
+}
+
+q {opacity: .7;}
