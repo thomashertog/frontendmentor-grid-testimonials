@@ -73,28 +73,42 @@ strong{
     }
 }
 
-section {
+figure {
     display: flex;
     flex-direction: column;
     gap: .5em;
     padding: 1em;
     border-radius: .5em;
+    margin:0;
 }
 
-section:not(.colored){
+blockquote{
+    margin: 0;
+}
+
+main{
+    margin-inline: auto;
+    max-width: 80em;
+}
+
+figure:not(.colored){
     background-color: white;
     box-shadow: 5px 5px 16px -12px var(--light-gray);
 }
 
-section header {
+figure figcaption {
     display: flex;
     gap: .5em;
     align-items:center;
 }
 
+.author{
+    font-size: 1rem;
+}
+
 img {
     border-radius: 50%;
-    max-height: 2em;
+    max-height: 2.5em;
 }
 
 .colored {
@@ -122,6 +136,7 @@ img {
 
 .author-role {
     opacity: .5;
+    font-weight: normal;
 }
 
 q {opacity: .7;}
