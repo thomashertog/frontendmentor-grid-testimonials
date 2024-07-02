@@ -73,7 +73,7 @@ strong{
     }
 }
 
-figure {
+.card {
     display: flex;
     flex-direction: column;
     gap: .5em;
@@ -91,12 +91,12 @@ main{
     max-width: 80em;
 }
 
-figure:not(.colored){
+.card:not(.colored){
     background-color: white;
     box-shadow: 5px 5px 16px -12px var(--light-gray);
 }
 
-figure figcaption {
+.card header {
     display: flex;
     gap: .5em;
     align-items:center;
